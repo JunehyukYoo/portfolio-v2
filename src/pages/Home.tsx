@@ -14,7 +14,7 @@ const Home = () => {
       <div className="absolute w-screen h-screen">
         <Particles
           className="w-full h-full"
-          moveParticlesOnHover={true}
+          moveParticlesOnHover={false}
           particleHoverFactor={0.2}
           particleColors={theme === "light" ? ["000000"] : ["ffffff"]}
         />

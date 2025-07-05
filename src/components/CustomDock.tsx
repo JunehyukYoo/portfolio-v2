@@ -1,6 +1,8 @@
+import { useState, useRef } from "react";
 import { Dock, DockIcon } from "@/components/ui/dock";
 import { Separator } from "@/components/ui/separator";
 import { useTheme } from "@/context/ThemeContext";
+import ElasticSlider from "@/components/ui/ElasticSlider";
 import {
   Tooltip,
   TooltipContent,
@@ -12,10 +14,17 @@ import {
   IconFileCv,
   IconSun,
   IconMoon,
+  IconPlayerPlay,
+  IconPlayerPause,
+  IconVolume3,
+  IconVolume,
 } from "@tabler/icons-react";
 
 const CustomDock = ({ className }: { className?: string }) => {
   const { theme, toggleTheme } = useTheme();
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "/JunehyukYoo-Resume.pdf";
@@ -24,11 +33,31 @@ const CustomDock = ({ className }: { className?: string }) => {
     link.click();
     document.body.removeChild(link);
   };
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const handleVolumeChange = (value: number) => {
+    if (audioRef.current) {
+      audioRef.current.volume = value / 100; // Convert from 0-100 to 0-1
+    }
+  };
+
   return (
     <Dock className={className}>
+      <audio ref={audioRef} src="/Kujaku.mp3" loop />
       <Tooltip>
         <TooltipTrigger asChild>
           <DockIcon
+            className="hover:scale-120 transition-all duration-300 ease-in-out"
             onClick={() =>
               window.open("https://github.com/JunehyukYoo", "_blank")
             }
@@ -42,7 +71,10 @@ const CustomDock = ({ className }: { className?: string }) => {
       </Tooltip>
       <Tooltip>
         <TooltipTrigger asChild>
-          <DockIcon onClick={handleDownload}>
+          <DockIcon
+            className="hover:scale-120 transition-all duration-300 ease-in-out"
+            onClick={handleDownload}
+          >
             <IconFileCv stroke={1.7} />
           </DockIcon>
         </TooltipTrigger>
@@ -50,10 +82,36 @@ const CustomDock = ({ className }: { className?: string }) => {
           <p>Resume</p>
         </TooltipContent>
       </Tooltip>
+
       <Separator orientation="vertical" />
       <Tooltip>
         <TooltipTrigger asChild>
-          <DockIcon onClick={toggleTheme}>
+          <DockIcon
+            className="hover:scale-120 transition-all duration-300 ease-in-out"
+            onClick={togglePlay}
+          >
+            {isPlaying ? <IconPlayerPause /> : <IconPlayerPlay />}
+          </DockIcon>
+        </TooltipTrigger>
+        <TooltipContent>{isPlaying ? "Pause" : "Play"}</TooltipContent>
+      </Tooltip>
+      <ElasticSlider
+        className="mr-2"
+        leftIcon={<IconVolume3 />}
+        rightIcon={<IconVolume />}
+        startingValue={0}
+        defaultValue={50}
+        maxValue={100}
+        onChange={handleVolumeChange}
+      />
+
+      <Separator orientation="vertical" />
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <DockIcon
+            className="hover:scale-120 transition-all duration-300 ease-in-out"
+            onClick={toggleTheme}
+          >
             {theme === "light" ? <IconMoon /> : <IconSun />}
           </DockIcon>
         </TooltipTrigger>
