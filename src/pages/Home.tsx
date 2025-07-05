@@ -1,8 +1,8 @@
 import Particles from "@/components/ui/Particles";
-import TiltedCard from "@/components/ui/TiltedCard";
 import SplitText from "@/components/ui/SplitText";
 import ShinyText from "@/components/ui/ShinyText";
 import FadingContent from "@/components/FadingContent";
+import ModelViewer from "@/components/ModelViewer";
 import { useTheme } from "@/context/ThemeContext";
 import { useIsMobile } from "@/hooks/useMobile";
 
@@ -20,16 +20,11 @@ const Home = () => {
         />
       </div>
 
-      <div className="w-min flex flex-col lg:flex-row justify-center items-center gap-16">
-        <div className="shadow-2xl rounded-[100px]">
-          <TiltedCard
-            captionText="Junehyuk Yoo, Software Engineer"
-            imageHeight={isMobile ? 300 : 350}
-            imageWidth={isMobile ? 300 : 350}
-            imageSrc="/profile.png"
-            showTooltip={false}
-            displayOverlayContent={false}
-          />
+      <div className="w-min flex flex-col lg:flex-row justify-center items-center">
+        <div
+          className={isMobile ? "w-[400px] h-[500px]" : "w-[500px] h-[820px]"}
+        >
+          <ModelViewer url="/astronaut.glb" animation="moon_walk" />
         </div>
         <div className="text-center min-w-180">
           <SplitText
