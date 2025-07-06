@@ -14,9 +14,15 @@ const Home = () => {
       <div className="absolute w-screen h-screen">
         <Particles
           className="w-full h-full"
+          particleBaseSize={theme === "light" ? 250 : 100}
+          particleCount={300}
           moveParticlesOnHover={false}
           particleHoverFactor={0.2}
-          particleColors={theme === "light" ? ["000000"] : ["ffffff"]}
+          particleColors={
+            theme === "light"
+              ? ["ee4724", "eed624", "247dee", "39ee24"]
+              : ["ffffff"]
+          }
         />
       </div>
 
@@ -26,9 +32,8 @@ const Home = () => {
         >
           <ModelViewer url="/astronaut.glb" animation="moon_walk" />
         </div>
-        <div className="text-center min-w-180">
+        <div className="text-center min-w-180 z-10">
           <SplitText
-            text="Junehyuk Yoo"
             className="text-6xl lg:text-8xl font-semibold"
             delay={100}
             duration={0.5}
@@ -39,7 +44,9 @@ const Home = () => {
             threshold={0.1}
             rootMargin="-100px"
             textAlign="center"
-          />
+          >
+            Junehyuk Yoo
+          </SplitText>
           <FadingContent
             blur={true}
             duration={2000}

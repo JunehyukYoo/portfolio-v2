@@ -19,7 +19,6 @@ const Model: FC<ModelProps> = ({ url, animation }) => {
   const { actions, names } = useAnimations(animations, group);
 
   useEffect(() => {
-    console.log("Animations available:", names);
     if (actions && names.length > 0) {
       actions[animation]?.reset().fadeIn(0.5).play();
     }
@@ -33,7 +32,10 @@ const ModelViewer: FC<{
   animation: "floating" | "idle" | "moon_walk" | "wave";
 }> = ({ url, animation }) => {
   return (
-    <Canvas camera={{ position: [0, 2, 3], fov: 50 }} className="w-full h-full">
+    <Canvas
+      camera={{ position: [-1, 2, 3], fov: 50 }}
+      className="w-full h-full"
+    >
       {/* Lighting */}
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
