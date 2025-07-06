@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { useIsMobile } from "@/hooks/useMobile";
 import CustomDock from "@/components/CustomDock";
 import GooeyNav from "@/components/ui/GooeyNav";
 
@@ -9,9 +10,10 @@ const items = [
 ];
 
 const Layout = () => {
+  const isMobile = useIsMobile();
   return (
     <div className="w-screen h-screen">
-      <div className="fixed top-8 right-8 z-1">
+      <div className={`fixed top-8 z-1 ${isMobile ? "right-4" : "right-8"}`}>
         <GooeyNav
           items={items}
           particleCount={15}
@@ -24,7 +26,9 @@ const Layout = () => {
         />
       </div>
       <Outlet />
-      <CustomDock className="fixed bottom-8 right-8" />
+      <CustomDock
+        className={`fixed bottom-8 ${isMobile ? "right-3" : "right-8"}`}
+      />
     </div>
   );
 };

@@ -18,6 +18,7 @@ import {
   IconPlayerPause,
   IconVolume3,
   IconVolume,
+  IconBrandLinkedin,
 } from "@tabler/icons-react";
 
 const CustomDock = ({ className }: { className?: string }) => {
@@ -66,7 +67,25 @@ const CustomDock = ({ className }: { className?: string }) => {
           </DockIcon>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Github</p>
+          <p>LinkedIn</p>
+        </TooltipContent>
+      </Tooltip>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <DockIcon
+            className="hover:scale-120 transition-all duration-300 ease-in-out"
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/junehyuk-yoo-a0b2011a0",
+                "_blank"
+              )
+            }
+          >
+            <IconBrandLinkedin stroke={1.7} />
+          </DockIcon>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>LinkedIn</p>
         </TooltipContent>
       </Tooltip>
       <Tooltip>

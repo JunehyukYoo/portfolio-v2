@@ -60,6 +60,11 @@ const Home = () => {
               speed={3}
               className="text-2xl"
             />
+            {isMobile && (
+              <p className="text-sm text-muted-foreground">
+                View my portoflio on desktop for the best experience!
+              </p>
+            )}
           </FadingContent>
         </div>
       </div>
