@@ -143,7 +143,6 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     if (filterRef.current) {
       makeParticles(filterRef.current);
     }
-    console.log("Got here");
     navigate(items[index].href);
   };
 

@@ -67,7 +67,7 @@ const CustomDock = ({ className }: { className?: string }) => {
           </DockIcon>
         </TooltipTrigger>
         <TooltipContent>
-          <p>LinkedIn</p>
+          <p>Github</p>
         </TooltipContent>
       </Tooltip>
       <Tooltip>

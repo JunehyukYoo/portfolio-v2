@@ -17,7 +17,7 @@ const Layout = () => {
         <GooeyNav
           items={items}
           particleCount={15}
-          particleDistances={[90, 10]}
+          particleDistances={[50, 10]}
           particleR={100}
           initialActiveIndex={0}
           animationTime={600}
