@@ -28,7 +28,11 @@ const Home = () => {
 
       <div className="w-min flex flex-col lg:flex-row justify-center items-center">
         <div
-          className={isMobile ? "w-[400px] h-[500px]" : "w-[500px] h-[820px]"}
+          className={
+            isMobile
+              ? "w-[400px] h-[500px] hover:cursor-grab"
+              : "w-[500px] h-[820px] hover:cursor-grab"
+          }
         >
           <ModelViewer url="/astronaut.glb" animation="moon_walk" />
         </div>

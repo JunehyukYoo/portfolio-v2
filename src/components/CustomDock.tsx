@@ -19,12 +19,17 @@ import {
   IconVolume3,
   IconVolume,
   IconBrandLinkedin,
+  IconArrowsMaximize,
+  IconArrowsMinimize,
 } from "@tabler/icons-react";
+import { useIsMobile } from "@/hooks/useMobile";
 
 const CustomDock = ({ className }: { className?: string }) => {
   const { theme, toggleTheme } = useTheme();
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -44,6 +49,15 @@ const CustomDock = ({ className }: { className?: string }) => {
       }
       setIsPlaying(!isPlaying);
     }
+  };
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+    setIsFullscreen((prev) => !prev);
   };
 
   const handleVolumeChange = (value: number) => {
@@ -125,6 +139,21 @@ const CustomDock = ({ className }: { className?: string }) => {
       />
 
       <Separator orientation="vertical" />
+      {!isMobile && (
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DockIcon
+              className="hover:scale-120 transition-all duration-300 ease-in-out"
+              onClick={toggleFullscreen}
+            >
+              {isFullscreen ? <IconArrowsMinimize /> : <IconArrowsMaximize />}
+            </DockIcon>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{isFullscreen ? "Exit fullscreen" : "Fullscreen"}</p>
+          </TooltipContent>
+        </Tooltip>
+      )}
       <Tooltip>
         <TooltipTrigger asChild>
           <DockIcon

@@ -109,7 +109,7 @@
 
 .gooey-nav-container .effect.filter {
   filter: blur(7px) contrast(100) blur(0);
-  mix-blend-mode: color-burn;
+  mix-blend-mode: darken;
 }
 
 .dark .gooey-nav-container .effect.filter {
