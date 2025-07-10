@@ -17,25 +17,42 @@ const About = () => {
   return (
     <div className="relative h-full w-full">
       <div className="relative h-full pt-30 pl-10 pr-10 pb-10 grid md:grid-cols-3 grid-cols-1 gap-4 z-10">
-        <Card className="col-span-1 transluscent w-full">
+        <Card className="col-span-1 transluscent h-full">
           <CardHeader>
             <CardTitle className="font-bold text-xl">About Me</CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-col items-center gap-8">
+          <CardContent className="flex flex-col items-center gap-6">
             <Avatar className="w-60 h-60 rounded-[30%]">
               <AvatarImage src="/profile.png" />
               <AvatarFallback>JY</AvatarFallback>
             </Avatar>
-            <p className="p-4">
-              Hi my name is <span className="font-bold">Junehyuk Yoo</span> but
-              I go by <span className="font-bold">June</span>. I am a software
-              engineer currently studying at{" "}
-              <span className="font-bold">UIUC</span>.
-            </p>
+            <div className="grid p-4 gap-2">
+              <p>
+                Hi, my name is <span className="font-bold">Junehyuk Yoo</span>{" "}
+                but I go by <span className="font-bold">June</span>! I am a
+                software engineer currently studying at{" "}
+                <span className="font-bold">UIUC</span>. I was born in Seoul,
+                South Korea, and moved back and forth between Hong Kong where I
+                graduated high school.
+              </p>
+              <p>
+                I have a passion for learning new skills and creating innovative
+                solutions to real-world problems. My interests span fullstack
+                development, machine learning, and language technologies. I
+                enjoy collaborating with others, building impactful projects,
+                and constantly challenging myself to grow as a developer and a
+                person.
+              </p>
+              <p>
+                Other than coding, I enjoy both listening to and playing music,
+                reading fantasy and space opera novels, practicing martial arts,
+                and trying espresso martinis.
+              </p>
+            </div>
           </CardContent>
         </Card>
 
-        <div className="col-span-1 row-span-2 flex flex-col gap-4">
+        <div className="col-span-1 flex flex-col gap-4 h-full">
           {/* Tech Stack / Skills */}
           <Card className="flex flex-col transluscent flex-auto">
             <Tabs defaultValue="visual" className="grow">
@@ -227,7 +244,7 @@ const About = () => {
             <CardContent>
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between">
-                  <div className="flex flex-col">
+                  <div className="flex flex-col text-lg">
                     <h3 className="font-semibold">
                       University of Illinois at Urbana Champaign
                     </h3>
@@ -235,7 +252,7 @@ const About = () => {
                       B.S. Computer Science and Linguistics (2020-Present)
                     </h2>
                   </div>
-                  <img src="/uiuc.svg" className="w-8" />
+                  <img src="/icons/uiuc.svg" className="w-8" />
                 </div>
                 <div className="flex flex-col">
                   <p>Cumulative GPA: 3.80</p>
@@ -252,15 +269,47 @@ const About = () => {
             </CardContent>
           </Card>
         </div>
-        <Card className="col-span-1 row-span-2 transluscent">
+        <Card className="col-span-1 transluscent">
           <CardHeader>
             <CardTitle className="font-bold text-xl">Experience</CardTitle>
           </CardHeader>
-          <CardContent>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo harum
-            omnis quidem quod optio esse quo, id, debitis tempora laboriosam
-            aliquam quia ducimus reiciendis, expedita veritatis ipsam eveniet
-            itaque? Ducimus!
+          <CardContent className="h-full flex flex-col gap-4">
+            <div className="grid gap-2">
+              <div className="flex justify-between">
+                <div className="flex flex-col text-lg">
+                  <h3 className="font-semibold">
+                    Capital Defense Command, ROKA
+                  </h3>
+                  <h2 className="italic">
+                    Exchange Systems Operator (Nov 2022-May 2024)
+                  </h2>
+                </div>
+                <img src="/icons/cdc.svg" className="w-8" />
+              </div>
+              <p>
+                Managed Seoul's inter/intra military base communications via
+                commercial and military-grade call servers. Created and
+                maintained circuits for analog phone lines (and H/L), military
+                satellites, radio networks, CCTVs, emergency alarm systems, etc.
+              </p>
+            </div>
+            <div className="grid gap-2">
+              <div className="flex justify-between">
+                <div className="flex flex-col text-lg">
+                  <h3 className="font-semibold">DeepMetrics</h3>
+                  <h2 className="italic">
+                    Software Engineer Intern (July-Oct 2022)
+                  </h2>
+                </div>
+                <img src="/icons/deepmetrics.svg" className="w-8" />
+              </div>
+              <p>
+                Managed Seoul's inter/intra military base communications via
+                commercial and military-grade call servers. Created and
+                maintained circuits for analog phone lines (and H/L), military
+                satellites, radio networks, CCTVs, emergency alarm systems, etc.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
