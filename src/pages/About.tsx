@@ -16,7 +16,7 @@ import { IconsLight, IconsDark } from "@/lib/cloudIcons";
 const About = () => {
   const { theme } = useTheme();
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-full w-full grid justify-center">
       <AnimatedContent
         distance={50}
         direction="vertical"
@@ -29,13 +29,13 @@ const About = () => {
         delay={0.3}
       >
         <div className="relative h-full pt-30 pl-10 pr-10 pb-10 grid md:grid-cols-3 grid-cols-1 gap-4 z-10 overflow-scroll">
-          <Card className="col-span-1 transluscent h-full">
+          <Card className="col-span-1 transluscent h-full overflow-x-scroll">
             <CardHeader>
               <CardTitle className="font-bold text-xl">About Me</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col items-center gap-6">
               <Avatar className="w-60 h-60 rounded-[30%]">
-                <AvatarImage src="/profile.png" />
+                <AvatarImage src="/photos/profile.png" />
                 <AvatarFallback>JY</AvatarFallback>
               </Avatar>
               <div className="grid p-4 gap-2">

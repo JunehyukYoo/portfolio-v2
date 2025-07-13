@@ -68,7 +68,7 @@ const CustomDock = ({ className }: { className?: string }) => {
 
   return (
     <Dock className={className}>
-      <audio ref={audioRef} src="/Kujaku.mp3" loop />
+      <audio ref={audioRef} src="/songs/Kujaku.mp3" loop />
       <Tooltip>
         <TooltipTrigger asChild>
           <DockIcon

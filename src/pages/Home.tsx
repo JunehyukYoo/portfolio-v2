@@ -1,14 +1,25 @@
+import { useEffect } from "react";
 import Particles from "@/components/ui/Particles";
 import SplitText from "@/components/ui/SplitText";
 import ShinyText from "@/components/ui/ShinyText";
 import FadingContent from "@/components/FadingContent";
 import ModelViewer from "@/components/ModelViewer";
+import { toast } from "@/components/Toast";
+import { CoolMode } from "@/components/ui/cool-mode";
 import { useTheme } from "@/context/ThemeContext";
 import { useIsMobile } from "@/hooks/useMobile";
 
 const Home = () => {
   const { theme } = useTheme();
   const isMobile = useIsMobile();
+
+  useEffect(() => {
+    toast({
+      title: "Welcome!",
+      description: "Try scrolling on and dragging the astronaut around.",
+    });
+  }, []);
+
   return (
     <div className="box-border relative w-screen h-screen overflow-x-hidden flex flex-col justify-center items-center">
       <div className="absolute w-screen h-screen">
@@ -34,7 +45,7 @@ const Home = () => {
               : "w-[500px] h-[820px] hover:cursor-grab"
           }
         >
-          <ModelViewer url="/astronaut.glb" animation="moon_walk" />
+          <ModelViewer url="/models/astronaut.glb" animation="moon_walk" />
         </div>
         <div className="text-center min-w-180 z-10">
           <SplitText
@@ -68,6 +79,15 @@ const Home = () => {
               <p className="text-sm text-muted-foreground">
                 View my portoflio on desktop for the best experience!
               </p>
+            )}
+            {!isMobile && (
+              <div className="mt-2">
+                <CoolMode>
+                  <button className="p-2 w-35 bg-foreground text-background rounded-3xl font-bold hover:cursor-pointer">
+                    Click Me!
+                  </button>
+                </CoolMode>
+              </div>
             )}
           </FadingContent>
         </div>
