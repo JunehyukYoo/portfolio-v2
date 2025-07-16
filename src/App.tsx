@@ -10,8 +10,10 @@ import Layout from "@/pages/Layout";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Projects from "@/pages/Projects";
+import { useTheme } from "./context/ThemeContext";
 
 function App() {
+  const { theme } = useTheme();
   const { assetLoaded, setAssetLoaded } = useLoadingContext();
   const [minDelayPassed, setMinDelayPassed] = useState(false);
   const [showApp, setShowApp] = useState(false);
@@ -51,7 +53,11 @@ function App() {
   if (!showApp) {
     return (
       <div className="flex flex-col items-center justify-center w-screen h-screen bg-background text-foreground text-xl">
-        <Grid size={60} speed={1.5} color={"white"} />
+        <Grid
+          size={60}
+          speed={1.5}
+          color={theme === "light" ? "black" : "white"}
+        />
       </div>
     );
   }
