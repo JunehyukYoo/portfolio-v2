@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import { useLoadingContext } from "./context/LoadingContext";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Toaster } from "sonner";
-// import MetallicLogo from "@/components/MetallicLogo";
+import { toast } from "@/components/Toast";
+import { Grid } from "ldrs/react";
+import "ldrs/react/Grid.css";
 import Layout from "@/pages/Layout";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
@@ -35,14 +37,21 @@ function App() {
   useEffect(() => {
     if (assetLoaded && minDelayPassed) {
       setShowApp(true);
+      setTimeout(
+        () =>
+          toast({
+            title: "Welcome!",
+            description: "Try scrolling on and dragging the astronaut around.",
+          }),
+        1000
+      );
     }
   }, [assetLoaded, minDelayPassed]);
 
   if (!showApp) {
     return (
-      <div className="flex items-center justify-center w-screen h-screen bg-black text-white text-xl">
-        {/* <MetallicLogo /> */}
-        Loading...
+      <div className="flex flex-col items-center justify-center w-screen h-screen bg-background text-foreground text-xl">
+        <Grid size={60} speed={1.5} color={"white"} />
       </div>
     );
   }

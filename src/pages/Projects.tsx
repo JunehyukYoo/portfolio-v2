@@ -1,12 +1,5 @@
-import { MetallicLogo } from "@/components/MetallicLogo";
-
 const Projects = () => {
-  return (
-    <div>
-      Projects page here
-      <MetallicLogo />
-    </div>
-  );
+  return <div>Projects page here</div>;
 };
 
 export default Projects;

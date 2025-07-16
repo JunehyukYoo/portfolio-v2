@@ -28,7 +28,7 @@ const About = () => {
         threshold={0}
         delay={0.3}
       >
-        <div className="relative h-full pt-30 pl-10 pr-10 pb-10 grid md:grid-cols-3 grid-cols-1 gap-4 z-10 overflow-scroll">
+        <div className="relative h-full pt-28 pl-10 pr-10 pb-10 grid md:grid-cols-3 grid-cols-1 gap-4 z-10 overflow-scroll">
           <Card className="col-span-1 transluscent h-full overflow-x-scroll">
             <CardHeader>
               <CardTitle className="font-bold text-xl">About Me</CardTitle>

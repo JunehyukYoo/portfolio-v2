@@ -4,7 +4,6 @@ import SplitText from "@/components/ui/SplitText";
 import ShinyText from "@/components/ui/ShinyText";
 import FadingContent from "@/components/FadingContent";
 import ModelViewer from "@/components/ModelViewer";
-import { toast } from "@/components/Toast";
 import { CoolMode } from "@/components/ui/cool-mode";
 import { useTheme } from "@/context/ThemeContext";
 import { useIsMobile } from "@/hooks/useMobile";
@@ -13,12 +12,7 @@ const Home = () => {
   const { theme } = useTheme();
   const isMobile = useIsMobile();
 
-  useEffect(() => {
-    toast({
-      title: "Welcome!",
-      description: "Try scrolling on and dragging the astronaut around.",
-    });
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="box-border relative w-screen h-screen overflow-x-hidden flex flex-col justify-center items-center">
