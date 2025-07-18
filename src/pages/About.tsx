@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardHeader,
@@ -90,60 +89,26 @@ const About = () => {
                         Programming Languages
                       </h2>
                       <div className="flex flex-wrap gap-1 p-2">
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Python
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Javascript/Typescript
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          C
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          C++
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          CSS/Tailwind
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Java
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Ruby
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          R
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Assembly
-                        </Badge>
+                        {[
+                          "Python",
+                          "C",
+                          "C++",
+                          "Java",
+                          "Javascript",
+                          "Typescript",
+                          "Ruby",
+                          "Assembly",
+                        ].map((s, i) => {
+                          return (
+                            <span
+                              key={i}
+                              className="bg-blue-500/15 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/30
+                                                hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                            >
+                              {s}
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
@@ -151,96 +116,67 @@ const About = () => {
                         Technical Skills + Concepts
                       </h2>
                       <div className="flex flex-wrap gap-1 p-2">
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          OOP
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Low-level Programming
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Fullstack Development
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Machine Learning
-                        </Badge>
+                        {[
+                          "OOP",
+                          "Fullstack Development",
+                          "Low-level Programming",
+                          "Machine Learning",
+                        ].map((s, i) => {
+                          return (
+                            <span
+                              key={i}
+                              className="bg-blue-500/15 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/30
+                                                hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                            >
+                              {s}
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <h2 className="font-semibold text-lg">
+                      <h2 className="font-semibold ">
                         Frameworks, Libraries, Tools
                       </h2>
                       <div className="flex flex-wrap gap-1 p-2">
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          React + Vite
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Node.js
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          PyTorch
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          NumPy
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Git
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Vim
-                        </Badge>
+                        {[
+                          "React+Vite",
+                          "Node.js",
+                          "PyTorch",
+                          "Numpy",
+                          "Vim",
+                          "Git",
+                        ].map((s, i) => {
+                          return (
+                            <span
+                              key={i}
+                              className="bg-blue-500/15 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/30
+                                                hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                            >
+                              {s}
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
                       <h2 className="font-semibold text-lg">Human Languages</h2>
                       <div className="flex flex-wrap gap-1 p-2">
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          English (Fluent)
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Korean (Semi-Fluent)
-                        </Badge>
-                        <Badge
-                          variant="default"
-                          className="bg-blue-600 text-white hover:bg-blue-700"
-                        >
-                          Chinese (Beginner)
-                        </Badge>
+                        {[
+                          "English (fluent)",
+                          "Korean (semi-fluent)",
+                          "Mandarin (beginner)",
+                        ].map((s, i) => {
+                          return (
+                            <span
+                              key={i}
+                              className="bg-blue-500/15 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/30
+                                                hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
+                            >
+                              {s}
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
                   </CardContent>
