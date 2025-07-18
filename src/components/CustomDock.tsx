@@ -128,15 +128,17 @@ const CustomDock = ({ className }: { className?: string }) => {
         </TooltipTrigger>
         <TooltipContent>{isPlaying ? "Pause" : "Play"}</TooltipContent>
       </Tooltip>
-      <ElasticSlider
-        className="mr-2"
-        leftIcon={<IconVolume3 />}
-        rightIcon={<IconVolume />}
-        startingValue={0}
-        defaultValue={50}
-        maxValue={100}
-        onChange={handleVolumeChange}
-      />
+      {!isMobile && (
+        <ElasticSlider
+          className="mr-2"
+          leftIcon={<IconVolume3 />}
+          rightIcon={<IconVolume />}
+          startingValue={0}
+          defaultValue={50}
+          maxValue={100}
+          onChange={handleVolumeChange}
+        />
+      )}
 
       <Separator orientation="vertical" />
       {!isMobile && (
