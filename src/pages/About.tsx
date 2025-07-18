@@ -5,9 +5,10 @@ import {
   CardTitle,
   CardAction,
   CardContent,
+  CardDescription,
 } from "@/components/ui/card";
 import { IconCloud } from "@/components/ui/icon-cloud";
-import AnimatedContent from "@/components/AnimatedContent";
+import FadeContent from "@/components/FadingContent";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useTheme } from "@/context/ThemeContext";
@@ -17,21 +18,17 @@ const About = () => {
   const { theme } = useTheme();
   return (
     <div className="relative h-full w-full grid justify-center">
-      <AnimatedContent
-        distance={50}
-        direction="vertical"
-        duration={1}
-        ease="power3.out"
-        initialOpacity={0.0}
-        animateOpacity
-        scale={1.1}
-        threshold={0}
-        delay={0.3}
+      <FadeContent
+        blur={true}
+        duration={400}
+        easing="ease-in"
+        delay={0.2}
+        initialOpacity={0.5}
       >
         <div className="relative h-full pt-28 pl-10 pr-10 pb-10 grid md:grid-cols-3 grid-cols-1 gap-4 z-10 overflow-scroll">
           <Card className="col-span-1 transluscent h-full overflow-x-scroll">
             <CardHeader>
-              <CardTitle className="font-bold text-xl">About Me</CardTitle>
+              <CardTitle className="font-bold text-2xl">About Me</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col items-center gap-6">
               <Avatar className="w-60 h-60 rounded-[30%]">
@@ -69,7 +66,7 @@ const About = () => {
             <Card className="flex flex-col transluscent flex-auto">
               <Tabs defaultValue="visual" className="grow">
                 <CardHeader>
-                  <CardTitle className="font-bold text-xl">
+                  <CardTitle className="font-bold text-2xl">
                     Tech Stack
                   </CardTitle>
                   <TabsList>
@@ -92,7 +89,7 @@ const About = () => {
                       <h2 className="font-semibold text-lg">
                         Programming Languages
                       </h2>
-                      <div className="flex flex-wrap gap-2 p-2">
+                      <div className="flex flex-wrap gap-1 p-2">
                         <Badge
                           variant="default"
                           className="bg-blue-600 text-white hover:bg-blue-700"
@@ -153,7 +150,7 @@ const About = () => {
                       <h2 className="font-semibold text-lg">
                         Technical Skills + Concepts
                       </h2>
-                      <div className="flex flex-wrap gap-2 p-2">
+                      <div className="flex flex-wrap gap-1 p-2">
                         <Badge
                           variant="default"
                           className="bg-blue-600 text-white hover:bg-blue-700"
@@ -184,7 +181,7 @@ const About = () => {
                       <h2 className="font-semibold text-lg">
                         Frameworks, Libraries, Tools
                       </h2>
-                      <div className="flex flex-wrap gap-2 p-2">
+                      <div className="flex flex-wrap gap-1 p-2">
                         <Badge
                           variant="default"
                           className="bg-blue-600 text-white hover:bg-blue-700"
@@ -225,7 +222,7 @@ const About = () => {
                     </div>
                     <div className="flex flex-col gap-2">
                       <h2 className="font-semibold text-lg">Human Languages</h2>
-                      <div className="flex flex-wrap gap-2 p-2">
+                      <div className="flex flex-wrap gap-1 p-2">
                         <Badge
                           variant="default"
                           className="bg-blue-600 text-white hover:bg-blue-700"
@@ -253,7 +250,7 @@ const About = () => {
             {/* Education */}
             <Card className="transluscent">
               <CardHeader>
-                <CardTitle className="font-bold text-xl">Education</CardTitle>
+                <CardTitle className="font-bold text-2xl">Education</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col gap-2">
@@ -268,7 +265,7 @@ const About = () => {
                     </div>
                     <img src="/icons/uiuc.svg" className="w-8" />
                   </div>
-                  <div className="flex flex-col">
+                  <CardDescription className="flex flex-col">
                     <p>Cumulative GPA: 3.80</p>
                     <p>
                       Relevant coursework: Relevant coursework: Applied Machine
@@ -278,14 +275,14 @@ const About = () => {
                       Semantics & Pragmatics...
                     </p>
                     <p>Expected graduation: May 2026</p>
-                  </div>
+                  </CardDescription>
                 </div>
               </CardContent>
             </Card>
           </div>
           <Card className="col-span-1 transluscent">
             <CardHeader>
-              <CardTitle className="font-bold text-xl">Experience</CardTitle>
+              <CardTitle className="font-bold text-2xl">Experience</CardTitle>
             </CardHeader>
             <CardContent className="h-full flex flex-col gap-4">
               <div className="grid gap-2">
@@ -300,13 +297,13 @@ const About = () => {
                   </div>
                   <img src="/icons/cdc.svg" className="w-8" />
                 </div>
-                <p>
+                <CardDescription>
                   Managed Seoul's inter/intra military base communications via
                   commercial and military-grade call servers. Created and
                   maintained circuits for analog phone lines (and H/L), military
                   satellites, radio networks, CCTVs, emergency alarm systems,
                   etc.
-                </p>
+                </CardDescription>
               </div>
               <div className="grid gap-2">
                 <div className="flex justify-between">
@@ -318,18 +315,18 @@ const About = () => {
                   </div>
                   <img src="/icons/deepmetrics.png" className="w-14" />
                 </div>
-                <p>
+                <CardDescription>
                   Handled data processing and analysis of vital files from
                   ventilated patients in Seoul National University Hospital in
                   order to develop an offline reinforcement learning algorithm
                   to assist clinicians with manual mechanical ventilator
                   control.
-                </p>
+                </CardDescription>
               </div>
             </CardContent>
           </Card>
         </div>
-      </AnimatedContent>
+      </FadeContent>
     </div>
   );
 };
