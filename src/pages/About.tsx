@@ -31,7 +31,7 @@ const About = () => {
             </CardHeader>
             <CardContent className="flex flex-col items-center gap-6">
               <Avatar className="w-60 h-60 rounded-[30%]">
-                <AvatarImage src="/photos/profile.png" />
+                <AvatarImage src="/photos/profile2.jpeg" />
                 <AvatarFallback>JY</AvatarFallback>
               </Avatar>
               <div className="grid p-4 gap-2">
@@ -233,7 +233,7 @@ const About = () => {
                   </div>
                   <img src="/icons/cdc.svg" className="w-8" />
                 </div>
-                <CardDescription>
+                <CardDescription className="text-md">
                   Managed Seoul's inter/intra military base communications via
                   commercial and military-grade call servers. Created and
                   maintained circuits for analog phone lines (and H/L), military
@@ -251,7 +251,7 @@ const About = () => {
                   </div>
                   <img src="/icons/deepmetrics.png" className="w-14" />
                 </div>
-                <CardDescription>
+                <CardDescription className="text-md">
                   Handled data processing and analysis of vital files from
                   ventilated patients in Seoul National University Hospital in
                   order to develop an offline reinforcement learning algorithm

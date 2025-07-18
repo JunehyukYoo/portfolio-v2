@@ -27,6 +27,7 @@ const PROJECT_LIST = [
     ],
     github: "https://github.com/JunehyukYoo/openfloor",
     website: "https://openfloor-debate.vercel.app",
+    image: "/photos/openfloor.png",
   },
   {
     title: "Portfolio v2",
@@ -34,7 +35,7 @@ const PROJECT_LIST = [
       "My personal portfolio showcasing myself, my skills, my experience, and my projects. Built with React + Vite + TS + Tailwind and a lot of love.",
     skills: ["React", "Vite", "Node.js", "Typescript", "HTML", "CSS/Tailwind"],
     github: "https://github.com/JunehyukYoo/portfolio-v2",
-    website: "#",
+    website: "/",
   },
   {
     title: "Competify",
@@ -50,9 +51,16 @@ const PROJECT_LIST = [
       "My original portfolio website. Built with React + Vite + TS + Tailwind.",
     skills: ["React", "Vite", "Node.js", "Typescript", "HTML", "CSS/Tailwind"],
     github: "https://github.com/JunehyukYoo/portfolio-v1",
-    website: "#",
+    website: "https://junehyukyoo.com",
   },
-];
+] as {
+  title: string;
+  description: string;
+  skills: string[];
+  github: string;
+  website: string;
+  image?: string;
+}[];
 
 const Projects = () => {
   return (
@@ -95,9 +103,11 @@ const Projects = () => {
                   />
                 </CardAction>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-col gap-4">
-                  <CardDescription>{p.description}</CardDescription>
+              <CardContent className="flex flex-col">
+                <div className="flex flex-col justify-between gap-4">
+                  <CardDescription className="text-lg">
+                    {p.description}
+                  </CardDescription>
                   <div className="flex flex-wrap gap-2">
                     {p.skills.map((s, i) => {
                       return (
