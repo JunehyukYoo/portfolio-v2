@@ -43,7 +43,8 @@ function App() {
         () =>
           toast({
             title: "Welcome!",
-            description: "Try scrolling on and dragging the astronaut around.",
+            description:
+              "Try scrolling on and dragging the astronaut around. Use the dark theme for the intended experience!",
           }),
         1000
       );
