@@ -11,6 +11,7 @@ import { IconCode, IconWorldWww } from "@tabler/icons-react";
 
 const PROJECT_LIST = [
   {
+    id: 0,
     title: "Openfloor",
     description:
       "Openfloor is a fullstack web application designed to facilitate structured debates for students and enthusiasts. Built with React and TypeScript on the frontend and Express.js on the backend, it uses Prisma ORM and passport-local for secure session-based authentication. Users can register, join debates, and justify their arguments in a clean, responsive interface.",
@@ -29,14 +30,16 @@ const PROJECT_LIST = [
     website: "https://openfloor-debate.vercel.app",
   },
   {
+    id: 1,
     title: "Portfolio v2",
     description:
       "My personal portfolio showcasing myself, my skills, my experience, and my projects. Built with React + Vite + TS + Tailwind and a lot of love.",
     skills: ["React", "Vite", "Node.js", "Typescript", "HTML", "CSS/Tailwind"],
     github: "https://github.com/JunehyukYoo/portfolio-v2",
-    website: "/",
+    website: "https://junehyukyoo.com",
   },
   {
+    id: 2,
     title: "Competify",
     description:
       "Assisted in development of a full-stack web application promoting habit-building through interactive and social competitions. Focused on fixing bugs and tweaking function logic during production.",
@@ -45,20 +48,21 @@ const PROJECT_LIST = [
     website: "https://competify.vercel.app",
   },
   {
+    id: 3,
     title: "Portfolio v1",
     description:
       "My original portfolio website. Built with React + Vite + TS + Tailwind.",
     skills: ["React", "Vite", "Node.js", "Typescript", "HTML", "CSS/Tailwind"],
     github: "https://github.com/JunehyukYoo/portfolio-v1",
-    website: "https://junehyukyoo.com",
+    website: "https://junehyukyoo-v1.netlify.app/",
   },
 ] as {
+  id: number;
   title: string;
   description: string;
   skills: string[];
   github: string;
   website: string;
-  image?: string;
 }[];
 
 const Projects = () => {
@@ -92,13 +96,17 @@ const Projects = () => {
                   />
                   <IconWorldWww
                     className="hover:cursor-pointer hover:scale-120 transition-all duration-300 ease"
-                    onClick={() =>
-                      window.open(
-                        `${p.website}`,
-                        "_blank",
-                        "noopener,noreferrer"
-                      )
-                    }
+                    onClick={() => {
+                      if (p.id !== 1) {
+                        window.open(
+                          `${p.website}`,
+                          "_blank",
+                          "noopener,noreferrer"
+                        );
+                      } else {
+                        alert("You are already here!");
+                      }
+                    }}
                   />
                 </CardAction>
               </CardHeader>
