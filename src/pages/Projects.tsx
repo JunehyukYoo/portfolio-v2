@@ -27,7 +27,6 @@ const PROJECT_LIST = [
     ],
     github: "https://github.com/JunehyukYoo/openfloor",
     website: "https://openfloor-debate.vercel.app",
-    image: "/photos/openfloor.png",
   },
   {
     title: "Portfolio v2",
